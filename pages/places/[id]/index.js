@@ -52,7 +52,7 @@ export default function DetailsPage() {
       </Link>
       <ImageContainer>
         <StyledImage
-          src={place.image}
+          src={place.image || "../../../public/fallback.jpg"}
           priority
           fill
           sizes="(max-width: 768px) 100vw,

@@ -1,4 +1,4 @@
-// import { db_places } from "../../../lib/db_places";
+// pages/api/places/index.js
 import dbConnect from "../../../db/connect";
 import Place from "../../../db/models/Place";
 
