@@ -21,6 +21,8 @@ export default function Comments({ locationName, comments }) {
     e.preventDefault();
   }
 
+  console.log(comments);
+
   return (
     <Article>
       <FormContainer onSubmit={handleSubmitComment}>

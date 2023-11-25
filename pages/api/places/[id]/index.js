@@ -1,18 +1,18 @@
-// pages/api/places/[id].js
 import dbConnect from "./../../../../db/connect";
 import Place from "../../../../db/models/Place";
+import Comment from "../../../../db/models/Comment";
 
 export default async function handler(request, response) {
   await dbConnect();
   const { id } = request.query;
 
   if (request.method === "GET") {
-    const place = await Place.findById(id);
+    const place = await Place.findById(id).populate("comments");
 
     if (!place) {
       return response.status(404).json({ status: "Not Found" });
     }
-
+    console.log(place);
     response.status(200).json({ place });
   }
 
